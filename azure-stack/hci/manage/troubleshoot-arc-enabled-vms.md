@@ -90,6 +90,15 @@ The expiration of the MOC token may result in a failure to create VMs, virtual h
         Repair-MocOperatorToken
 ```
 
+### "Please run 'az login' to setup account" error on Windows Admin Center after it has been setup via PowerShell.
+
+After setting up Azure Arc Resource Bridge via PowerShell and then checking the same on Windows Admin Center > "Azure Stack HCI Cluster" > Settings > Resource Bridge you may encounter "ERROR: Please run 'az login' to setup account". To resolve this error, run the following command on all of the servers of your Azure Stack HCI cluster:
+
+```PowerShell
+        az login --use-device-code
+```
+
+Please be aware of the default token durability as detailed on [Sign in with Azure CLI](https://learn.microsoft.com/en-us/cli/azure/authenticate-azure-cli).
 
 ## Limitations and known issues
 
